@@ -1,3 +1,27 @@
 {% extends "portal/base.html" %}
+
+{% block titulo %}Pio Xii Sustentavel{% endblock %}
+
+{% block jumbotron %}	
+	<div class="jumbotron">
+		<div class="container">
+			<div class="col-sm-12">
+				<h1>Bem vindo!</h1>
+				<h2><b>VI Feira de Conhecimento <i>"Por uma Pio XII Sustentável"</i></b></h2>
+					<p>Este é um projeto multidisciplinar e com a relevância do Tema, será realizado por toda a  Comunidade Escolar, ou seja todos os segmentos que fazem parte da Escola – A.O.S.D’s, alunos,  pais, professores e gestores.</p>
+				    <p><a class="btn btn-primary btn-lg" href="{% url "sobre" %}" role="button">Veja mais sobre &raquo;</a></p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
 {% block corpo %}
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="page-header">
+				<h1>Reflexão temática</h1>
+			</div>
+			<p><h4>Tudo o que acontece no mundo, seja no meu país, na minha cidade ou no meu bairro acontece comigo. Então eu preciso participar das decisões que interferem na minha vida.”</h4> <i>(Herbert de Souza, o Betinho)</i></p>
+		</div>
+	</div>
+	<hr>
 {% endblock %}
