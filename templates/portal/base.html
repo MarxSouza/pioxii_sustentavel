@@ -17,7 +17,6 @@
 	<title></title>
 </head>
 <body>
-<div class="container-fluid">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,13 +46,12 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-</div>
 {% block corpo %}{% endblock %}
 
 <!-- Bootstrap Javascripts -->
-<script src="https://raw.githubusercontent.com/twbs/bootstrap/master/js/dropdown.js"></script>
-<script src="https://raw.githubusercontent.com/twbs/bootstrap/master/js/transition.js"></script>
-<script src="https://raw.githubusercontent.com/twbs/bootstrap/master/js/collapse.js"></script>
+<script src="{% static "js/dropdown.js" %}"></script>
+<script src="{% static "js/transition.js" %}"></script>
+<script src="{% static "js/collapse.js" %}"></script>
 
 </body>
 </html>
