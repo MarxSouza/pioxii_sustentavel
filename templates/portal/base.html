@@ -1,84 +1,108 @@
-{% load i18n %} {% load staticfiles %}
+{% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#" lang="pt-br">
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
-	<link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
-
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-	<style>
-			/* Move down content because we have a fixed navbar that is 50px tall */
-		body {padding-top: 50px;
-		  padding-bottom: 20px;}
-	</style>
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-68684286-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="{% static "js/bootstrap.min.js" %}"></script>
-	
-	<!-- Jquery -->
-	<script src="{% static "js/jquery-2.1.4.min.js" %}"></script>
+    <meta property="og:title" content="Pio Xii Sustentável">
+    <meta property="og:image" content="/marxsouza/s2x3wu/_screenshots/images/thumbnail/1700_1442088810.png_1500x1500.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FROONT">
+    <meta charset="UTF-8">
+    <meta name="DC.title" content="Pio Xii Sustentável">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="DC.language" scheme="UTF-8" content="pt-br">
+    <meta http-equiv="content-language" content="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="{% static "vendor/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "vendor/noframework.waypoints.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "vendor/responsive-nav.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "vendor/idangerous.swiper.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "vendor/webfont.js" %}"></script>	
+    <script type="text/javascript" src="{% static "js/form-submit.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/reveal-animation.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/background-parallax.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/page-script.js" %}"></script>
+	<script type="text/javascript">
+        var fonts = {
+            "europa": {
+                "css_name": "europa",
+                "family": "Europa",
+                "id": "myvg",
+                "source": "typekit",
+                "stack": "sans-serif",
+                "variants": [
+                    "n3",
+                    "i3",
+                    "n4",
+                    "i4",
+                    "n7",
+                    "i7"
+                ]
+            }
+        };
+    </script>
+    <script type="text/javascript">
+        try {
+            Typekit.load();
+        } catch (e) {}
+    </script>
 	<title>{% block titulo %}{% endblock %}</title>
 </head>
+
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{% url "index" %}"><i class="fa fa-globe"></i> Pio Xii Sustentável</a>
+    <div class="b-content">
+        <div id="navigation" class="fr-widget fr-navigation fr-navigation-active fr_navigation fr_red_button">
+            <div id="mobile_toggle" class="fr-widget fr-svg fr_mobile_toggle">
+                <div class="fr-svg-inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 73.2 61.6" xml:space="preserve">
+                        <path d="M4.2 8.6h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 1.9 71.3 0 68.9 0H4.2C1.9 0 0 1.9 0 4.3 0 6.7 1.9 8.6 4.2 8.6zM68.9 26.5H4.2C1.9 26.5 0 28.4 0 30.8c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 28.4 71.3 26.5 68.9 26.5zM68.9 53H4.2C1.9 53 0 54.9 0 57.3c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 54.9 71.3 53 68.9 53z" />
+                    </svg>
+                </div>
+            </div><!--
+         --><div id="items" class="fr-widget fr-container fr_items">
+                <a id="link_1" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_1 fr-widget-hover-opacity-60 fr-link" href="{% url "index" %}">
+                    <div class="fr-text"><i class="fa fa-home"></i> Inicio</div>
+                </a><!--
+             --><a id="link_2" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_2 fr-widget-hover-opacity-60 fr-link" href="{% url "formulario" %}">
+                    <div class="fr-text"><i class="fa fa-pencil"></i> Formulário</div>
+                </a><!--
+             --><a id="link_3" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_3 fr-widget-hover-opacity-60 fr-link" href="{% url "grafico" %}">
+                    <div class="fr-text"><i class="fa fa-pie-chart"></i> Gráfico</div>
+                </a><!--
+             --><a id="link_4" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_4 fr-widget-hover-opacity-60 fr-link" href="{% url "sobre" %}">
+                    <div class="fr-text"><i class="fa fa-info"></i> Sobre</div>
+                </a>
+            </div>
+        </div>
+
+		{% block corpo %} {% endblock %}    
+      	<div id="footer_3" class="fr-widget fr-container fr_footer_3">
+            <div id="f3_copyright" class="fr-widget fr-text fr-wf fr_caption_center_light_grey fr_f3_copyright">
+                <div class="fr-text">
+                    <p>Copyright © 2015</p>
+                    <p>
+                        <em>Karl Marx Silva e Souza</em>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="{% url "index" %}"><i class="fa fa-home"></i> Inicio</a></li>
-         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-search"></i> Pesquisa <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-  			<li><a href="{% url "form" %}"><i class="fa fa-edit"></i> Formulário</a></li>
-       		<li><a href="{% url "grafico" %}"><i class="fa fa-pie-chart"></i> Gráfico</a></li>
-          </ul>
-      	</li>
-        <li><a href="{% url "sobre" %}"><i class="fa fa-info"></i> Sobre</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-<div class="container">
-	{% block jumbotron %}{% endblock %}
-	{% block corpo %}{% endblock %}
-	<center>
-	<footer>
-    	<p>&copy; Centro de Ensino Professor Rafael Braga de Oliveira 2015</p>
-    </footer>
-    </center>
-</div><!-- ./container -->
-
-<!-- Bootstrap Javascripts -->
-<script src="{% static "js/dropdown.js" %}"></script>
-<script src="{% static "js/transition.js" %}"></script>
-<script src="{% static "js/collapse.js" %}"></script>
-
+    <div class="fr-copyright-footer">
+        <div class="fr-widget fr-container">
+            <div class="fr-widget fr-text fr-wf fr-made-with-froont">
+                <a href="//froont.com" class="fr-text" target="_blank">
+        			Centro de Ensino Professor Rafael Braga de Oliveira
+      			</a>
+            </div>
+        </div>
+        <div class="fr-bottom-em-spacer"></div>
+    </div>
 </body>
+
 </html>
