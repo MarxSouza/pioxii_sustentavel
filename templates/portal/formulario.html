@@ -3,19 +3,26 @@
 {% block titulo %} Formulário {% endblock %}
 
 {% block corpo %}
-		<form id="form" class="fr-widget fr-form fr-wf fr_form" method="GET">
-            {% csrf_token %}
-            <div class="fr-widget fr-text fr-wf fr_form_heading">
-                <div class="fr-text">Formulário de Pesquisa</div>
-                <hr style="color: #ccc; height: 0px;" />
-            </div>
-            {% for field in form %}
-         	<div class="fr-widget fr_form_input fr_email_input">
-				{{ field.label }}: {{ field }}
-            </div>
-            {% endfor %}
-         	<button type="submit" id="submit_button" class="fr_submit_button " tabindex="0">
-                Enviar
-            </button>
-        </form>
+	<style>
+	#id_seu_nome { width: 90% ;font-weight: initial; font-family: Lato; border-radius: 5px 5px 5px 5px;}
+	.fr_email_input { font-family: Open Sans; color: #1eb100; }
+	label { font-weight: initial; font-family:Roboto ; }
+	ul { list-style: none; } 
+	</style>
+	<form id="form" class="fr-widget fr-form fr-wf fr_form" method="POST">
+    	{% csrf_token %}
+    	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    	<div class="fr-widget fr-text fr-wf fr_form_heading">
+        	<div class="fr-text">Formulário de Pesquisa</div>
+            <hr style="color: #ccc; height: 0px;" />
+        </div>
+        {% for field in form %}
+        <div class="fr-widget fr_form_input fr_email_input">    	
+        	{{ field.label }} {{ field }}
+        </div>
+        {% endfor %}
+        <button type="submit" id="submit_button" class="fr_submit_button" tabindex="0">
+        	Enviar
+        </button>
+    </form>
 {% endblock %}

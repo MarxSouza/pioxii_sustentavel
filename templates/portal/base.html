@@ -13,6 +13,7 @@
     <meta http-equiv="content-language" content="en">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="shortcut icon" href="{% static "images/1000px-Gnome-globe.svg.png" %}"/>
     <link rel="stylesheet" href="{% static "css/base.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
@@ -44,7 +45,7 @@
                     "n7",
                     "i7"
                 ]
-            }
+            },
         };
     </script>
     <script type="text/javascript">
@@ -52,7 +53,7 @@
             Typekit.load();
         } catch (e) {}
     </script>
-	<title>{% block titulo %}{% endblock %}</title>
+	<title>Pio Xii Sustentável &rarr;{% block titulo %}{% endblock %}</title>
 </head>
 
 <body>
@@ -66,17 +67,14 @@
                 </div>
             </div><!--
          --><div id="items" class="fr-widget fr-container fr_items">
-                <a id="link_1" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_1 fr-widget-hover-opacity-60 fr-link" href="{% url "index" %}">
+                <a id="link_1" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_1 fr-widget-hover-opacity-60 fr-link" href="{% url "portal:index" %}">
                     <div class="fr-text"><i class="fa fa-home"></i> Inicio</div>
                 </a><!--
-             --><a id="link_2" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_2 fr-widget-hover-opacity-60 fr-link" href="{% url "formulario" %}">
+             --><a id="link_2" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_2 fr-widget-hover-opacity-60 fr-link" href="{% url "portal:formulario" %}">
                     <div class="fr-text"><i class="fa fa-pencil"></i> Formulário</div>
                 </a><!--
-             --><a id="link_3" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_3 fr-widget-hover-opacity-60 fr-link" href="{% url "grafico" %}">
+             --><a id="link_3" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_3 fr-widget-hover-opacity-60 fr-link" href="{% url "portal:grafico" %}">
                     <div class="fr-text"><i class="fa fa-pie-chart"></i> Gráfico</div>
-                </a><!--
-             --><a id="link_4" class="fr-widget fr-text fr-wf fr_navigation_link fr_link_4 fr-widget-hover-opacity-60 fr-link" href="{% url "sobre" %}">
-                    <div class="fr-text"><i class="fa fa-info"></i> Sobre</div>
                 </a>
             </div>
         </div>
@@ -96,7 +94,7 @@
     <div class="fr-copyright-footer">
         <div class="fr-widget fr-container">
             <div class="fr-widget fr-text fr-wf fr-made-with-froont">
-                <a href="//froont.com" class="fr-text" target="_blank">
+                <a href="#" class="fr-text">
         			Centro de Ensino Professor Rafael Braga de Oliveira
       			</a>
             </div>
@@ -104,5 +102,4 @@
         <div class="fr-bottom-em-spacer"></div>
     </div>
 </body>
-
 </html>

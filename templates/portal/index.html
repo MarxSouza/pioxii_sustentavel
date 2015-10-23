@@ -20,14 +20,14 @@
          	<script>
 		       	$(document).ready(function(){
 			    	$('#hd2_button_buy').click(function(){
-			    		location.href = '{% url "baixarapp" %}';
+			    		location.href = '{% url "portal:formulario" %}';
 			    	});
 		    	}); 	
          	</script>
          	<div id="hd2_2_columns" class="fr-widget fr-grid fr_hd2_2_columns">
                 <center>
 	                <div id="hd2_button_buy" class="fr-widget fr-text fr-wf fr_red_button fr_hd2_button_buy">
-	                    <div class="fr-text"><a href="{% url "baixarapp" %}" style="text-decoration: none;">Baixar App</a></div>
+	                    <div class="fr-text"><a href="{% url "portal:formulario" %}" style="text-decoration: none;"><i class="fa fa-pencil"></i> Prencher formulário</a></div>
 	                </div>
                 </center>
             </div>

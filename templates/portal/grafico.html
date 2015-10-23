@@ -4,4 +4,89 @@
 
 {% block corpo %}
 
+<!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['piechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Brasileiros', {{ brasileiros|length }}],
+          ['Naturalizados', {{ naturalizados|length }}],
+          ['Estrangeiros', {{ estrangeiros|length }}],
+        ]);
+
+        // Set chart options
+        var options = {'title':'1. Qual a sua nacionalidade?',
+                       'width':450,
+                       'height':500};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['piechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Solteiros', {{ solteiros|length }}],
+          ['Casados', {{ casados|length }}],
+          ['Separados', {{ separados|length }}],
+          ['Viúvos', {{ viuvos|length }}]
+        ]);
+
+        // Set chart options
+        var options = {'title':'2. Qual o seu estado civil?',
+                       'width':450,
+                       'height':500};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+        chart.draw(data, options);
+      }
+	</script>
+
+	<div id="form" class="fr-widget fr-form fr-wf fr_form">	
+    	<div class="fr-widget fr-text fr-wf fr_form_heading">
+        	<div class="fr-text">Gráfico de Pesquisa</div>
+            <hr style="color: #ccc; height: 0px;" />
+        </div>
+        <br />
+        {{ time }}
+       	<center>
+	       	<div id="chart_div1"></div>
+	       	<div id="chart_div2"></div>
+       	</center>
+       	<button onclick="location.href='{% url "portal:formulario" %}';" id="submit_button" class="fr_submit_button " tabindex="0">
+        	<i class="fa fa-pencil"></i> Precher Formulario
+        </button>
+    </div>	        
 {% endblock %}

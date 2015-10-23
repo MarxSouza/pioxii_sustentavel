@@ -1412,7 +1412,6 @@ a:hover {
 /** ******************************** **/
 /** End of widget styles             **/
 /** ******************************** **/
-.fr_form_input { font-family: Roboto; color: #000; }
 
 #id_cores_favoritas, #id_faixa_etaria{
 	list-style: none;
@@ -1428,4 +1427,3 @@ a:hover {
 }
 #hd2_main_title {
 	font-family: Lato, sans-serif;
-}
