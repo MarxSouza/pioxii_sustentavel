@@ -11,7 +11,7 @@ def formulario(request):
         if form.is_valid():
             pes = form.save()
             pes.save()
-            return HttpResponseRedirect("/grafico.py")
+            return HttpResponseRedirect("/grafico/")
     else: 
         form = forms.PesquisaForm()
     return render(request, 'portal/formulario.html', {
