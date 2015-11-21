@@ -11,98 +11,85 @@ def index(request):
 def formularios(request):
     if request.method == 'POST':
         form_1 = forms.Form1(request.POST, request.FILES)
-        form_2 = forms.Form2(request.POST, request.FILES)
-        form_3 = forms.Form3(request.POST, request.FILES)
         if form_1.is_valid():
-            pes = form_1.save()
-            pes.save()
-            return HttpResponseRedirect("/grafico/")
-        if form_2.is_valid():
-            pes = form_2.save()
-            pes.save()
-            return HttpResponseRedirect("/grafico/")
-        if form_3.is_valid():
-            pes = form_3.save()
+            pes = form_1.save(commit=False)
+            pes.entrevistadores = request.user
             pes.save()
             return HttpResponseRedirect("/grafico/")
         
     else: 
         form_1 = forms.Form1()
-        form_2 = forms.Form2()
-        form_3 = forms.Form3()
     return render(request, 'portal/formularios.html', {
         'form_1': form_1,
-        'form_2': form_2,
-        'form_3': form_3,
     })
 
 def grafico(request):
     #respostas = Pesquisa.objects.count()
     # -- Form 1
     #pergunta_1
-    a_1_a = Pesquisa.objects.filter(a_pergunta_1='Nenhuma')
+    a_1_a = Pesquisa.objects.filter(a_pergunta_1='nenhuma')
     a_1_b = Pesquisa.objects.filter(a_pergunta_1='1 a 5')
     a_1_c = Pesquisa.objects.filter(a_pergunta_1='6 a 10')
     a_1_d = Pesquisa.objects.filter(a_pergunta_1='11 a 15')
-    a_1_e = Pesquisa.objects.filter(a_pergunta_1='Mais de 15')
+    a_1_e = Pesquisa.objects.filter(a_pergunta_1='mais de 15')
     #pergunta_2
-    a_2_a = Pesquisa.objects.filter(a_pergunta_2='Guarda')
-    a_2_b = Pesquisa.objects.filter(a_pergunta_2='Descarta')
-    a_2_c = Pesquisa.objects.filter(a_pergunta_2='Usa como saco de lixo')
-    a_2_d = Pesquisa.objects.filter(a_pergunta_2='Outros')
+    a_2_a = Pesquisa.objects.filter(a_pergunta_2='guarda')
+    a_2_b = Pesquisa.objects.filter(a_pergunta_2='descarta')
+    a_2_c = Pesquisa.objects.filter(a_pergunta_2='usa como saco de lixo')
+    a_2_d = Pesquisa.objects.filter(a_pergunta_2='outros')
     #pergunta_3
-    a_3_a = Pesquisa.objects.filter(a_pergunta_3='Sim')
-    a_3_b = Pesquisa.objects.filter(a_pergunta_2='Não')
+    a_3_a = Pesquisa.objects.filter(a_pergunta_3='sim')
+    a_3_b = Pesquisa.objects.filter(a_pergunta_2='não')
     #pergunta_4
-    a_4_a = Pesquisa.objects.filter(a_pergunta_4='Sim')
-    a_4_b = Pesquisa.objects.filter(a_pergunta_4='Não')
+    a_4_a = Pesquisa.objects.filter(a_pergunta_4='sim')
+    a_4_b = Pesquisa.objects.filter(a_pergunta_4='não')
     #pergunta_5
-    a_5_a = Pesquisa.objects.filter(a_pergunta_5='Sempre')
-    a_5_b = Pesquisa.objects.filter(a_pergunta_5='As vezes')
+    a_5_a = Pesquisa.objects.filter(a_pergunta_5='sempre')
+    a_5_b = Pesquisa.objects.filter(a_pergunta_5='as vezes')
     #pergunta_6
-    a_6_a = Pesquisa.objects.filter(a_pergunta_6='Sim')
-    a_6_b = Pesquisa.objects.filter(a_pergunta_6='Não')    
+    a_6_a = Pesquisa.objects.filter(a_pergunta_6='sim')
+    a_6_b = Pesquisa.objects.filter(a_pergunta_6='não')    
     #pergunta_7
-    a_7_a = Pesquisa.objects.filter(a_pergunta_7='Sim')
-    a_7_b = Pesquisa.objects.filter(a_pergunta_7='Não')
+    a_7_a = Pesquisa.objects.filter(a_pergunta_7='sim')
+    a_7_b = Pesquisa.objects.filter(a_pergunta_7='não')
     #pergunta_8
-    a_8_a = Pesquisa.objects.filter(a_pergunta_8='Sim')
-    a_8_b = Pesquisa.objects.filter(a_pergunta_8='Não')
+    a_8_a = Pesquisa.objects.filter(a_pergunta_8='sim')
+    a_8_b = Pesquisa.objects.filter(a_pergunta_8='não')
     #pergunta_9
-    a_9_a = Pesquisa.objects.filter(a_pergunta_9='Sim')
-    a_9_b = Pesquisa.objects.filter(a_pergunta_9='Não')
+    a_9_a = Pesquisa.objects.filter(a_pergunta_9='sim')
+    a_9_b = Pesquisa.objects.filter(a_pergunta_9='não')
     
     # -- Form 2
     #pergunta_1
-    b_1_a = Pesquisa.objects.filter(b_pergunta_1='Descarta na pia')
-    b_1_b = Pesquisa.objects.filter(b_pergunta_1='Envia para a reciclagem')
-    b_1_c = Pesquisa.objects.filter(b_pergunta_1='Descarta em terreno baldio')
+    b_1_a = Pesquisa.objects.filter(b_pergunta_1='descarta na pia')
+    b_1_b = Pesquisa.objects.filter(b_pergunta_1='envia para a reciclagem')
+    b_1_c = Pesquisa.objects.filter(b_pergunta_1='descarta em terreno baldio')
     #pergunta_2
     b_2_a = Pesquisa.objects.filter(b_pergunta_2='1 a 4')
     b_2_b = Pesquisa.objects.filter(b_pergunta_2='5 a 7')
     b_2_c = Pesquisa.objects.filter(b_pergunta_2='8 a 10')
     #pergunta_3
-    b_3_a = Pesquisa.objects.filter(b_pergunta_3='Bom')
-    b_3_b = Pesquisa.objects.filter(b_pergunta_3='Ótimo')
-    b_3_c = Pesquisa.objects.filter(b_pergunta_3='Não faz diferença')
+    b_3_a = Pesquisa.objects.filter(b_pergunta_3='bom')
+    b_3_b = Pesquisa.objects.filter(b_pergunta_3='ótimo')
+    b_3_c = Pesquisa.objects.filter(b_pergunta_3='não faz diferença')
     #pergunta_4
-    b_4_a = Pesquisa.objects.filter(b_pergunta_4='Sim')
-    b_4_b = Pesquisa.objects.filter(b_pergunta_4='Não')
+    b_4_a = Pesquisa.objects.filter(b_pergunta_4='sim')
+    b_4_b = Pesquisa.objects.filter(b_pergunta_4='não')
     #pergunta_5
-    b_5_a = Pesquisa.objects.filter(b_pergunta_5='Sim')
-    b_5_b = Pesquisa.objects.filter(b_pergunta_5='Não')
-    b_5_c = Pesquisa.objects.filter(b_pergunta_5='Talvez')
+    b_5_a = Pesquisa.objects.filter(b_pergunta_5='sim')
+    b_5_b = Pesquisa.objects.filter(b_pergunta_5='não')
+    b_5_c = Pesquisa.objects.filter(b_pergunta_5='talvez')
     
     # -- Form 3
     #pergunta_2
-    c_2_a = Pesquisa.objects.filter(c_pergunta_2='Biodegradável')
-    c_2_b = Pesquisa.objects.filter(c_pergunta_2='Não biodegradável')
+    c_2_a = Pesquisa.objects.filter(c_pergunta_2='biodegradável')
+    c_2_b = Pesquisa.objects.filter(c_pergunta_2='não biodegradável')
     #pergunta_3
-    c_3_a = Pesquisa.objects.filter(c_pergunta_3='Sim')
-    c_3_b = Pesquisa.objects.filter(c_pergunta_3='Não')
+    c_3_a = Pesquisa.objects.filter(c_pergunta_3='sim')
+    c_3_b = Pesquisa.objects.filter(c_pergunta_3='não')
     #pergunta_4
-    c_4_a = Pesquisa.objects.filter(c_pergunta_4='Sim')
-    c_4_b = Pesquisa.objects.filter(c_pergunta_4='Não')
+    c_4_a = Pesquisa.objects.filter(c_pergunta_4='sim')
+    c_4_b = Pesquisa.objects.filter(c_pergunta_4='não')
     
     return render(request, 'portal/grafico.html', {
         # -- Form 1

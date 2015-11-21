@@ -32,42 +32,4 @@
         	Enviar
         </button>
     </form>
-	<form id="form" class="fr-widget fr-form fr_form" method="POST">
-    	{% csrf_token %}
-    	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        <center>
-        <div style="width: 60%; background-color: #669966; border-radius: 10px 10px 10px 10px;"> 
-        	<br>
-        	<b style="font-size: 15pt;">Formulário 2</b><br> 
-        	<hr><br>
-        	{% for field in form_2 %}
-        	{{ field.label }}{{ field }}<br><br><hr style="height: 10px; background-color: #ccc;">
-        	{% endfor %}
-        	<br>
-        </div>
-        </center>
-        <button type="submit" id="submit_button" class="fr_submit_button" tabindex="0">
-        	Enviar
-        </button>
-    </form>
-    
-	<form id="form" class="fr-widget fr-form fr_form" method="POST">
-    	{% csrf_token %}
-    	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        <center>
-        <div style="width: 60%; background-color: #669966; border-radius: 10px 10px 10px 10px;"> 
-        	<br>
-        	<b style="font-size: 15pt;">Formulário 3</b><br> 
-        	<hr><br>
-        	{% for field in form_3 %}
-        	{{ field.label }}{{ field }}<br><br><hr style="height: 10px; background-color: #ccc;">
-        	{% endfor %}
-        	<br>
-        </div>
-        </center>
-        <button type="submit" id="submit_button" class="fr_submit_button" tabindex="0">
-        	Enviar
-        </button>
-    </form>
-   
 {% endblock %}

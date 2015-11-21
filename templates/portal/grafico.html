@@ -20,9 +20,9 @@
           ['Mais de 15', {{ a_1_e|length }}]
         ]);
         var options = {'title':'1. Quantas sacolas plásticas, em média, você obtem semanalmente?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c1'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a1'));
         chart.draw(data, options);
       }
 	</script>
@@ -40,9 +40,9 @@
           ['Outros', {{ a_2_d|length }}]
         ]);
         var options = {'title':'2. O que você faz com as sacolas plásticas?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c2'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a2'));
         chart.draw(data, options);
       }
 	</script>
@@ -58,9 +58,9 @@
           ['Não', {{ a_3_b|length }}]
         ]);
         var options = {'title':'3. Você conhece as sacolas retornáveis?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c3'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a3'));
         chart.draw(data, options);
       }
 	</script>
@@ -76,9 +76,9 @@
           ['Não', {{ a_4_b|length }}],
         ]);
         var options = {'title':'4. Se sim, você usa sacolas retornáveis?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c4'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a4'));
         chart.draw(data, options);
       }
 	</script>
@@ -94,9 +94,9 @@
           ['As vezes', {{ a_5_b|length }}],
         ]);
         var options = {'title':'5. Qual frequência?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c5'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a5'));
         chart.draw(data, options);
       }
 	</script>
@@ -112,9 +112,9 @@
           ['Não', {{ a_6_b|length }}],
         ]);
         var options = {'title':'6. Você acha que consumo e descarte inapropriados das sacolas plásticas, causam prejuízos ao meio ambiente?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c6'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a6'));
         chart.draw(data, options);
       }
 	</script>
@@ -130,9 +130,9 @@
           ['Não', {{ a_7_b|length }}],
         ]);
         var options = {'title':'7. Você tem conhecimento do projeto de Lei que visa a proibição da distribuição das sacolas plásticas pelos estabelecimentos comerciais?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c7'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a7'));
         chart.draw(data, options);
       }
 	</script>
@@ -148,9 +148,9 @@
           ['Não', {{ a_8_b|length }}],
         ]);
         var options = {'title':'8. Se sim, concorda?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c8'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a8'));
         chart.draw(data, options);
       }
 	</script>
@@ -166,9 +166,157 @@
           ['Não', {{ a_9_b|length }}],
         ]);
         var options = {'title':'9. Você gostou de participar dessa pesquisa?',
-                       'width':200,
-                       'height':120};
-        var chart = new google.visualization.PieChart(document.getElementById('c9'));
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('a9'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Descarta na pia', {{ b_1_a|length }}],
+          ['Envia para a reciclagem', {{ b_1_b|length }}],
+          ['Descarta em terreno baldio', {{ b_1_c|length }}],
+        ]);
+        var options = {'title':'1. Qual destino que você dá ao óleo depois do seu uso?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('b1'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['1 a 4', {{ b_2_a|length }}],
+          ['5 a 7', {{ b_2_b|length }}],
+          ['8 a 10', {{ b_2_c|length }}],
+        ]);
+        var options = {'title':'2. De 1 a 10 qual a importância do reaproveitamento do óleo?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('b2'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Bom', {{ b_3_a|length }}],
+          ['Ótimo', {{ b_3_b|length }}],
+          ['Não faz diferença', {{ b_3_c|length }}]
+        ]);
+        var options = {'title':'3. O que você acha de ter em sua comunidade um espaço para recolher esse tipo de resíduo?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('b3'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Sim', {{ b_4_a|length }}],
+          ['Não', {{ b_4_b|length }}],
+        ]);
+        var options = {'title':'4. Vocẽ sabia que da pra reaproveitar o óleo?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('b4'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Sim', {{ b_5_a|length }}],
+          ['Não', {{ b_5_b|length }}],
+          ['Talvez', {{ b_5_c|length }}],
+        ]);
+        var options = {'title':'5. Você usaria em seu dia-a-dia um sabão produzido a partir do óleo?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('b5'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Biodegrádavel', {{ c_2_a|length }}],
+          ['Não biodegradavel', {{ c_2_b|length }}],
+        ]);
+        var options = {'title':'2. Qual tipo de sacola é comprada?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('c2'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Sim', {{ c_3_a|length }}],
+          ['Não', {{ c_3_b|length }}],
+        ]);
+        var options = {'title':'3. Você tem conhecimento do projeto de Lei que visa a proibição da distribuição das sacolas plásticas pelos estabelecimentos comerciais?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('c3'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Sim', {{ c_4_a|length }}],
+          ['Não', {{ c_4_b|length }}],
+        ]);
+        var options = {'title':'4. Se sim, concorda?',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('c4'));
         chart.draw(data, options);
       }
 	</script>
@@ -180,27 +328,31 @@
         </div>
         <br />
        	<center>
-	       	<div id="c1"></div>
-	       	<div id="c2"></div>
-	       	<div id="c3"></div>
-	       	<div id="c4"></div>
-	       	<div id="c5"></div>
-	       	<div id="c6"></div>
-	       	<div id="c7"></div>
-	       	<div id="c8"></div>
-	       	<div id="c9"></div>
-	       	<div id="c10"></div>
-	       	<div id="c11"></div>
-	       	<div id="c12"></div>
-	       	<div id="c13"></div>
-	       	<div id="c14"></div>
-	       	<div id="c15"></div>
-	       	<div id="c16"></div>
-	       	<div id="c17"></div>
-	       	<div id="c18"></div>
+       	<div style="width: 70%;">
+			<h2>Formulario 1</h2>
+	       	<div id="a1"></div><hr>
+	       	<div id="a2"></div><hr>
+	       	<div id="a3"></div><hr>
+	       	<div id="a4"></div><hr>
+	       	<div id="a5"></div><hr>
+	       	<div id="a6"></div><hr>
+	       	<div id="a7"></div><hr>
+	       	<div id="a8"></div><hr>
+	       	<div id="a9"></div><hr>
+	       	<br><br><h2>Formulario 2</h2>
+	       	<div id="b1"></div><hr>
+	       	<div id="b2"></div><hr>
+	       	<div id="b3"></div><hr>
+	       	<div id="b4"></div><hr>
+	       	<div id="b5"></div><hr>
+	       	<br><br><h2>Formulario 3</h2>
+	       	<div id="c2"></div><hr>
+	       	<div id="c3"></div><hr>
+	       	<div id="c4"></div><hr>
+	    </div>
        	</center>
-       	<button onclick="location.href='{% url "portal:formulario" %}';" id="submit_button" class="fr_submit_button " tabindex="0">
-        	<i class="fa fa-pencil"></i> Precher Formulario
+       	<button onclick="location.href='{% url "portal:formularios" %}';" id="submit_button" class="fr_submit_button " tabindex="0">
+        	<i class="fa fa-pencil"></i> Precher Formularios
         </button>
     </div>	        
 {% endblock %}
