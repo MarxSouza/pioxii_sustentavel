@@ -5,20 +5,20 @@
 {% block corpo %}
 <br>
 <div class="fr-widget fr-text fr-wf fr_form_heading">
-	<div class="fr-text">Formulário de Pesquisa</div>
+	<div class="fr-text">Formulários de Pesquisa</div>
 	<hr style="color: #ccc; height: 0px;" />
 </div>
 <style>
 	#id_nome { width: 90% ;font-weight: initial; font-family: Lato; border-radius: 5px 5px 5px 5px;}
 	label { font-weight: initial; font-family:Roboto ; }
 	ul { list-style: lower-latin; }
-	#id_pergunta_15 { width: 60%; }
-	</style>
-	<form id="form" class="fr-widget fr-form fr_form" method="POST">
+</style>
+	<br>
+	<form id="form" class="fr-widget fr-form" method="POST">
     	{% csrf_token %}
     	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
         <center>
-        <div style="width: 60%; background-color: #669966; border-radius: 10px 10px 10px 10px;"> 
+        <div style="width: 60%; background-color: #9999CC; border-radius: 10px 10px 10px 10px;"> 
         	<br>
         	<b style="font-size: 15pt;">Formulário 1</b><br> 
         	<hr>  	
@@ -28,7 +28,43 @@
         	<br>
         </div>
         </center>
-        <button type="submit" id="submit_button" class="fr_submit_button" tabindex="0">
+        <button style="background-color: #9999CC;" type="submit" id="submit_button" class="fr_submit_button" tabindex="0">
+        	Enviar
+        </button>
+    </form>
+	<form id="form" class="fr-widget fr-form fr_form" method="POST">
+    	{% csrf_token %}
+    	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <center>
+        <div style="width: 60%; background-color: #CC6666; border-radius: 10px 10px 10px 10px;"> 
+        	<br>
+        	<b style="font-size: 15pt;">Formulário 2</b><br> 
+        	<hr>  	
+        	{% for field in form_2 %}
+        	{{ field.label }}{{ field }}<br><br><hr style="height: 10px; background-color: #ccc;">
+        	{% endfor %}
+        	<br>
+        </div>
+        </center>
+        <button style="background-color: #CC6666;" type="submit" id="submit_button" class="fr_submit_button" tabindex="0">
+        	Enviar
+        </button>
+    </form>
+	<form id="form" class="fr-widget fr-form fr_form" method="POST">
+    	{% csrf_token %}
+    	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <center>
+        <div style="width: 60%; background-color: #66CC66; border-radius: 10px 10px 10px 10px;"> 
+        	<br>
+        	<b style="font-size: 15pt;">Formulário 3</b><br> 
+        	<hr>  	
+        	{% for field in form_3 %}
+        	{{ field.label }}{{ field }}<br><br><hr style="height: 10px; background-color: #ccc;">
+        	{% endfor %}
+        	<br>
+        </div>
+        </center>
+        <button style="background-color: #66CC66;" type="submit" id="submit_button" class="fr_submit_button" tabindex="0">
         	Enviar
         </button>
     </form>

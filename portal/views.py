@@ -11,16 +11,31 @@ def index(request):
 def formularios(request):
     if request.method == 'POST':
         form_1 = forms.Form1(request.POST, request.FILES)
+        form_2 = forms.Form1(request.POST, request.FILES)
+        form_3 = forms.Form1(request.POST, request.FILES)
         if form_1.is_valid():
             pes = form_1.save(commit=False)
             pes.entrevistadores = request.user
             pes.save()
             return HttpResponseRedirect("/grafico/")
-        
+        if form_2.is_valid():
+            pes = form_2.save(commit=False)
+            pes.entrevistadores = request.user
+            pes.save()
+            return HttpResponseRedirect("/grafico/")
+        if form_3.is_valid():
+            pes = form_3.save(commit=False)
+            pes.entrevistadores = request.user
+            pes.save()
+            return HttpResponseRedirect("/grafico/")        
     else: 
         form_1 = forms.Form1()
+        form_2 = forms.Form2()
+        form_3 = forms.Form3()
     return render(request, 'portal/formularios.html', {
         'form_1': form_1,
+        'form_2': form_2,
+        'form_3': form_3,
     })
 
 def grafico(request):
