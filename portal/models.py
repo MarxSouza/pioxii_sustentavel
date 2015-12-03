@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Parte 1
 sexos =         (('masculino', 'Masculino'), ('feminino','Feminino'),)
-idade =         (('menos de 20','Menos de 20'),('de 20 a 30','de 20 a 30'),('de 30 a 40', 'de 30 a 40'),('de 40 a 50', 'de 40 a 50'), ('mais de 50','mais de 50'))
+idades =         (('menos de 20','Menos de 20'),('de 20 a 30','de 20 a 30'),('de 30 a 40', 'de 30 a 40'),('de 40 a 50', 'de 40 a 50'), ('mais de 50','mais de 50'))
 escolaridades = (('não estudou','Não Estudou'),('fundamental','Fundamental'),('médio','Médio'),('superior','Superior'),)
 # Parte 2 
 choices_1 =     (('nenhuma','Nenhuma'),('1 a 5','1 a 5'),('6 a 10','6 a 10'),('11 a 15','11 a 15'),('mais de 15','Mais de 15'),)
@@ -22,7 +22,7 @@ class Pesquisa(models.Model):
     entrevistadores = models.ForeignKey(User,default='')
     nome = models.CharField('Nome do Entrevistado:',max_length=100,default='')
     sexo = models.CharField('Sexo:',choices=sexos, max_length=10,default='')
-    idade = models.CharField(default='', max_length=100)
+    idade = models.CharField(default='', max_length=100, choices=idades)
     escolaridade = models.CharField('Escolaridade:',choices=escolaridades, max_length=100,default='')
     funcao = models.CharField('Função no estabelecimento:', max_length=100,default='')
     
