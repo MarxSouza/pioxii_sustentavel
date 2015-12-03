@@ -13,6 +13,65 @@
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
+          ['Masculino', {{ mas|length }}],
+          ['Feminino', {{ fem|length }}],
+        ]);
+        var options = {'title':'Sexo',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('z1'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Menores que 20', {{ id_1|length }}],
+          ['de 20 a 30', {{ id_2|length }}],
+          ['de 30 a 40', {{ id_3|length }}],
+          ['de 40 a 50', {{ id_4|length }}],
+          ['Mais de 50', {{ id_5|length }}]
+        ]);
+        var options = {'title':'Idade',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('z2'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Não estudou', {{ nao|length }}],
+          ['Fundamental', {{ fun|length }}],
+          ['Médio', {{ med|length }}],
+          ['Superior', {{ sup|length }}],
+        ]);
+        var options = {'title':'Escolaridade (ensino)',
+                       'height':500,
+                       'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('z3'));
+        chart.draw(data, options);
+      }
+	</script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['piechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
           ['Nenhuma', {{ a_1_a|length }}],
           ['1 a 5', {{ a_1_b|length }}],
           ['6 a 10', {{ a_1_c|length }}],
@@ -329,7 +388,11 @@
         <br />
        	<center>
        	<div style="width: 70%;">
-			<h2>Formulario 1</h2>
+       		<h2>Dados Pessoais</h2>
+       		<div id="z1"></div><hr>
+	       	<div id="z2"></div><hr>
+	       	<div id="z3"></div><hr>
+			<br><h2>Formulario 1</h2>
 	       	<div id="a1"></div><hr>
 	       	<div id="a2"></div><hr>
 	       	<div id="a3"></div><hr>

@@ -39,7 +39,17 @@ def formularios(request):
     })
 
 def grafico(request):
-    #respostas = Pesquisa.objects.count()
+    mas = Pesquisa.objects.filter(sexo='masculino')
+    fem = Pesquisa.objects.filter(sexo='feminino')
+    id_1 = Pesquisa.objects.filter(idade='menos de 20')
+    id_2 = Pesquisa.objects.filter(idade='20 a 30')
+    id_3 = Pesquisa.objects.filter(idade='30 a 40')
+    id_4 = Pesquisa.objects.filter(idade='40 a 50')
+    id_5 = Pesquisa.objects.filter(idade='mais de 50')
+    nao = Pesquisa.objects.filter(escolaridade='não estudou')
+    fun = Pesquisa.objects.filter(escolaridade='fundamental')
+    med = Pesquisa.objects.filter(escolaridade='médio')
+    sup = Pesquisa.objects.filter(escolaridade='superior')
     # -- Form 1
     #pergunta_1
     a_1_a = Pesquisa.objects.filter(a_pergunta_1='nenhuma')
@@ -107,6 +117,11 @@ def grafico(request):
     c_4_b = Pesquisa.objects.filter(c_pergunta_4='não')
     
     return render(request, 'portal/grafico.html', {
+        'mas':mas,'fem':fem, 
+        'id_1':id_1,'id_2':id_2,
+        'id_3':id_3,'id_4':id_4,
+        'id_5':id_5, 'nao':nao,'fun':fun,
+        'med':med,'sup':sup,                            
         # -- Form 1
         'a_1_a':a_1_a,'a_1_b':a_1_b,'a_1_c':a_1_c,'a_1_d':a_1_d,'a_1_e':a_1_e,
         'a_2_a':a_2_a,'a_2_b':a_2_b,'a_2_c':a_2_c,'a_2_d':a_2_d,
